@@ -186,6 +186,7 @@ async function carregarFoto(img)
         }
     } catch(erro){
         console.log(erro.message)
+         mainScreen.innerHTML = "NÃO ENCONTRADO";
     }
 } 
 
