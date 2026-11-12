@@ -45,35 +45,40 @@ key10.addEventListener('click', () => leituraTeclado('0'));
 btnWhiteLeft.addEventListener('click', buscarPokemon);
 btnWhiteRight.addEventListener('click', apagar);
 
-
 btnRight.addEventListener('click', () => {
-    if (Number(numPokemon) <= 1025) {
+    if (Number(numPokemon) + 1 <= 1025) {
         numPokemon = String(Number(numPokemon) + 1);
         estadoPokedex.digitando = true;
         atualizarNumero(numPokemon);
     }
 });
+
 btnLeft.addEventListener('click', () => {
-    if (Number(numPokemon) >= 1) {
+    if (Number(numPokemon) - 1 >= 1) {
         numPokemon = String(Number(numPokemon) - 1);
         estadoPokedex.digitando = true;
         atualizarNumero(numPokemon);
     }
 });
+
 btnUp.addEventListener('click', () => {
-    if (Number(numPokemon) <= 1025) {
-        numPokemon = String(Number(numPokemon) + 10);
-        estadoPokedex.digitando = true;
-        atualizarNumero(numPokemon);
-    }
+    let novoNumero = Number(numPokemon) + 10;
+    // Se passar de 1025, trava no 1025 (ou você pode usar if (novoNumero <= 1025) para bloquear)
+    if (novoNumero > 1025) novoNumero = 1025; 
+    
+    numPokemon = String(novoNumero);
+    estadoPokedex.digitando = true;
+    atualizarNumero(numPokemon);
 });
 
 btnDown.addEventListener('click', () => {
-    if (Number(numPokemon) >= 1) {
-        numPokemon = String(Number(numPokemon) - 10);
-        estadoPokedex.digitando = true;
-        atualizarNumero(numPokemon);
-    }
+    let novoNumero = Number(numPokemon) - 10;
+    // Se for menor que 1, trava no 1 (evita números negativos ou zero)
+    if (novoNumero < 1) novoNumero = 1; 
+
+    numPokemon = String(novoNumero);
+    estadoPokedex.digitando = true;
+    atualizarNumero(numPokemon);
 });
 
 btnShiny.addEventListener('click', () => {
