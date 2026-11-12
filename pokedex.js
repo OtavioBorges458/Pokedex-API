@@ -111,16 +111,6 @@ function apagar()
         smallDisplayRight.textContent = "---";
         smallDisplayLeft.textContent = "---";
     }
-
-}
-
-function mostrarNumero(id)
-{
-    if(Number(numPokemon) > 1025 || Number(numPokemon) == 0){
-        numberDisplay.textContent = '#000'
-    }else{
-        numberDisplay.textContent = `#${numPokemon}`
-    }
 }
 
 function atualizarNumero(id)
