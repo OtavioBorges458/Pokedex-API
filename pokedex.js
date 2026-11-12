@@ -214,7 +214,7 @@ function exibirDados(data, especie)
     nome.style.fontSize = '1.5rem';
     nome.style.fontWeight = 'bold';
     const tipo = document.createElement('p');
-    tipo.textContent = 'Tipo: ' + data.types.map(t => capitalizar(t.type.name)).join(', ');    
+    tipo.textContent = 'Tipo: ' + dados.types.map(t => t.type.name);
     const pesoKg = data.weight / 10;
     let peso = 0;
     let unidadePeso = '';
