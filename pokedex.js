@@ -29,7 +29,7 @@ const infoScreen = document.querySelector('#info-screen');
 const mainScreen = document.querySelector('#main-screen');
 const smallDisplayLeft = document.querySelector('#small-display-left');
 const smallDisplayRight = document.querySelector('#small-display-right');
-const smallDisplay = document.querySelector('.small-display');
+
 
 key1.addEventListener('click', () => leituraTeclado('1'));
 key2.addEventListener('click', () => leituraTeclado('2'));
@@ -63,9 +63,8 @@ btnLeft.addEventListener('click', () => {
 
 btnUp.addEventListener('click', () => {
     let novoNumero = Number(numPokemon) + 10;
-    // Se passar de 1025, trava no 1025 (ou você pode usar if (novoNumero <= 1025) para bloquear)
-    if (novoNumero > 1025) novoNumero = 1025; 
     
+    if (novoNumero > 1025) novoNumero = 1025; 
     numPokemon = String(novoNumero);
     estadoPokedex.digitando = true;
     atualizarNumero(numPokemon);
@@ -73,9 +72,8 @@ btnUp.addEventListener('click', () => {
 
 btnDown.addEventListener('click', () => {
     let novoNumero = Number(numPokemon) - 10;
-    // Se for menor que 1, trava no 1 (evita números negativos ou zero)
+    
     if (novoNumero < 1) novoNumero = 1; 
-
     numPokemon = String(novoNumero);
     estadoPokedex.digitando = true;
     atualizarNumero(numPokemon);
