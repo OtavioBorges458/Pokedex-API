@@ -139,7 +139,7 @@ async function consultarApi(msg)
         console.log("Ocorreu um erro:", erro.message)
          if(Number(msg) < 1 || Number(msg) > 1025) {
             numberDisplay.textContent = '#000';
-            infoScreen.textContent = "Ocorreu um Erro, tente novamente..."
+
             smallDisplayLeft.textContent = '---';
             smallDisplayRight.textContent = '---';
          }
@@ -214,7 +214,7 @@ function exibirDados(data, especie)
     nome.style.fontSize = '1.5rem';
     nome.style.fontWeight = 'bold';
     const tipo = document.createElement('p');
-    tipo.textContent = 'Tipo: ' + dados.capitalizar(data.types[0].type.name);
+    tipo.textContent = 'Tipo: ' + capitalizar(data.types[0].type.name);
     const pesoKg = data.weight / 10;
     let peso = 0;
     let unidadePeso = '';
