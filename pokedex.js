@@ -60,22 +60,32 @@ btnLeft.addEventListener('click', () => {
         atualizarNumero(numPokemon);
     }
 });
+btnUp.addEventListener('click', () => {
 
-if (Number(numPokemon) > 10) {
-        numPokemon = String(Number(numPokemon) - 10);
+    if (Number(numPokemon) < 1020) {
+
+        numPokemon = String(Number(numPokemon) + 10);
+
         estadoPokedex.digitando = true;
+
         atualizarNumero(numPokemon);
-    } else if (Number(numPokemon) > 1) {
-        numPokemon = "1"; // Se estiver entre 2 e 10, vai direto para o 1
-        estadoPokedex.digitando = true;
-        atualizarNumero(numPokemon);
+
     }
+
+});
+
 btnDown.addEventListener('click', () => {
+
     if (Number(numPokemon) > 0) {
+
         numPokemon = String(Number(numPokemon) - 10);
+
         estadoPokedex.digitando = true;
+
         atualizarNumero(numPokemon);
+
     }
+
 });
 
 btnShiny.addEventListener('click', () => {
