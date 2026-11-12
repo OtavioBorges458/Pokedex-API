@@ -139,7 +139,7 @@ async function consultarApi(msg)
         console.log("Ocorreu um erro:", erro.message)
          if(Number(msg) < 1 || Number(msg) > 1025) {
             numberDisplay.textContent = '#000';
-            
+            infoScreen.textContent = "Ocorreu um Erro, tente novamente..."
             smallDisplayLeft.textContent = '---';
             smallDisplayRight.textContent = '---';
          }
